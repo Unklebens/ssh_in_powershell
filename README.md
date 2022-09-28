@@ -34,3 +34,7 @@ Installation du module PowerShell "Posh-SSH" sur hwzuyr0pfm03
 droit d'execution de scripts powershell non signés
 
     Set-ExecutionPolicy Bypass sur jenkins (fait le 24/03/2022)
+    
+## Manquant suite à l'abandon du projet
+
+une logique qui Invoke les .ps1 dans une ordre logique
