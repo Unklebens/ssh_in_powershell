@@ -37,4 +37,4 @@ droit d'execution de scripts powershell non signés
     
 ## Manquant suite à l'abandon du projet
 
-une logique qui Invoke les .ps1 dans une ordre logique
+une logique qui Invoke les .ps1 dans un ordre logique
