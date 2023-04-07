@@ -1,4 +1,4 @@
-#Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
+﻿#Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
 $outputDirectory = "C:\Temp\psperfmon" #Directory where the restult file will be stored.
 $computerName = "" #Set the Computer from which to collect counters. Leave blank for local computer.
 $sampleInterval = 1 #Collection interval in seconds.
@@ -19,11 +19,12 @@ Write-Host "
 Collecting counters...
 Press Ctrl+C to exit."
 #Specify the list of performance counters to collect.
+$mem = (get-counter -ListSet Mémoire).Counter
 $counters =
     @(`
     "\Disque physique(0 C:)\Pourcentage du temps disque" `
     ,"\Processeur(_Total)\% temps processeur" `
-    ,"\Mémoire\Mégaoctets disponibles" `
+    ,$mem[28] `
     ,"\TCPv4\Connexions actives" 
     )
 #Set the variables for the Get-Counter cmdlet.
